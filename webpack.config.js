@@ -27,6 +27,15 @@ module.exports = {
       {
         test: /\.css$/,
         use: [{ loader: "style-loader" }, { loader: "css-loader" }]
+      },
+      {
+        // jpe?g significa que o e é opcional
+        // então pode ser jpg ou jpeg
+        // o i no final significa que não é case-sensitive
+        test: /.*\.(gif|png|jpe?g)$/i,
+        use: {
+          loader: "file-loader"
+        }
       }
     ]
   }
