@@ -8,6 +8,9 @@ class TechList extends Component {
     techs: ["Node.js", "ReactJS", "React Native"]
   };
 
+  // FUNÇÕES QUE IRÃO MANIPULAR O ESTADO
+  // DEVEM FICAR NO MESMO COMPONENTE (ARQUIVO)
+
   // precisa ser no formato arrow function para ter acesso ao this
   handleInputChange = e => {
     this.setState({ newTech: e.target.value });
@@ -36,8 +39,10 @@ class TechList extends Component {
           {this.state.techs.map(tech => (
             <TechItem
               key={tech}
+              // enviou como parâmetro para TechItem ==>
               tech={tech}
               onDelete={() => this.handleDelete(tech)}
+              // <==
             />
           ))}
         </ul>
