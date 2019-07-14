@@ -3,7 +3,9 @@
 const path = require("path");
 
 module.exports = {
+  // arquivo de entrada
   entry: path.resolve(__dirname, "src", "index.js"),
+  // onde irá jogar o bundle com o código que o browser entende
   output: {
     path: path.resolve(__dirname, "public"),
     filename: "bundle.js"
@@ -17,7 +19,7 @@ module.exports = {
     rules: [
       {
         // expressão regular = /\.js$/
-        // significa que vai procurar arquivos que terminem com js
+        // significa que vai procurar arquivos que terminem com .js
         test: /\.js$/,
         exclude: /node_modules/,
         use: {

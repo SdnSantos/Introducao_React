@@ -19,6 +19,8 @@ class TechList extends Component {
 
   // Executado sempre que houver alterações nas props ou estado
   // parâmetros antes da alteração
+  // quando não for utilizar algum parâmetro pode substituir por _
+  // componentDidUpdate(_, prevState)
   componentDidUpdate(prevProps, prevState) {
     // se o estado anterior está diferente de agora
     if (prevState.techs !== this.state.techs) {
@@ -31,7 +33,6 @@ class TechList extends Component {
 
   // FUNÇÕES QUE IRÃO MANIPULAR O ESTADO
   // DEVEM FICAR NO MESMO COMPONENTE (ARQUIVO)
-
   // precisa ser no formato arrow function para ter acesso ao this
   handleInputChange = e => {
     this.setState({ newTech: e.target.value });
